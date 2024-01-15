@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    - Primary meta tags
+  -->
+  <title>Wren - Personal Blog Website</title>
+  <meta name="title" content="Wren - Personal Blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+  <!--
+    - Favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <!--
+    - google icon link
+  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+  rel="stylesheet">
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!--
+    - custom js link
+  -->
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+  <!--
+    - #HEADER
+  -->
+  <header class="header" data-header aria-labelledby="header-label">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="assets/images/logo.svg" alt="Wren logo" width="119" height="37">
+      </a>
+      <navbar class="navbar" data-navbar>
+        <div class="navbar-top">
+          <a href="#" class="logo">
+            <img src="assets/images/logo.svg" alt="Wren logo" width="119" height="37">
+          </a>
+          <button class="close" aria-label="close menu" data-nav-toggler>
+            <span class="material-symbols-outlined close">close</span>
+          </button>
+        </div>
+        <ul class="navbar-list">
+          <li>
+            <a href="#home" class="navbar-link">Home</a>
+          </li>
+          <li>
+            <a href="#topics" class="navbar-link">Topics</a>
+          </li>
+          <li>
+            <a href="#featured" class="navbar-link">Featured post</a>
+          </li>
+          <li>
+            <a href="#recent" class="navbar-link">Recent Post</a>
+          </li>
+          <li>
+            <a href="#contact" class="navbar-link">Contact</a>
+          </li>
+        </ul>
+        <div class="navbar-middle">
+          <div class="profile-card">
+            <img src="assets/images/author-1.png" alt=" Steven" class="profile-banner" width="48" height="48">
+            <div>
+              <p class="card-title">Hello Steven !</p>
+              <span class="card-subtitle">You have 3 new messages</span>
+            </div>
+          </div>
+          <ul class="links-list">
+            <li>
+              <a href="#" class="list-link">Profile</a>
+            </li>
+            <li>
+              <a href="#" class="list-link">Articles Saved</a>
+            </li>
+            <li>
+              <a href="#" class="list-link">Add New Post</a>
+            </li>
+            <li>
+              <a href="#" class="list-link">My Likes</a>
+            </li>
+            <li>
+              <a href="#" class="list-link">Account Setting</a>
+            </li>
+            <li>
+              <a href="#" class="list-link">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-bottom">
+          <p class="copyright-text">
+            Copyright 2022 © Wren - Personal Blog Template.
+            Developed by codewithsadee
+          </p>
+        </div>
+      </navbar>
+      <a href="#" class="btn-primary btn">Subscribe</a>
+      <button class="open" aria-label="open menu" data-nav-toggler>
+        <span class="material-symbols-outlined open">menu</span>
+      </button>
+    </div>
+  </header>
+  <main>
+    <!--
+      - #HERO
+    -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-subtitle">Hello Everyone!</p>
+          <h1 class="hero-title headline headline-1">I’m <span class="span">Wren Clark</span></h1>
+          <p class="hero-text">I use animation as a third dimension by which to simplify experiences and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.</p>
+          <div class="input-wrapper">
+            <input type="email" name="email-field" placeholder="Type your email address" class="input-field">
+            <button class="btn btn-primary">
+              <span>subscribe</span>
+              <span class="material-symbols-outlined">arrow_right_alt</span>
+            </button>
+          </div>
+        </div>
+        <div class="hero-banner">
+            <img src="assets/images/hero-banner.png" alt="Wren Clark" width="327" height="490" class="img-cover">
+            <img src="assets/images/pattern-2.svg" class="shape shape-1" alt="shape">
+            <img src="assets/images/pattern-3.svg" class="shape shape-2" alt="shape">
+        </div>
+        <img src="assets/images/shadow-1.svg" class="bg-hero bg-hero-1">
+        <img src="assets/images/shadow-2.svg" class="bg-hero bg-hero-2">
+      </div>
+    </section>
+    <article>
+      <!--
+        - #TOPICS
+      -->
+      <section class="topics" id="topics" aria-labelledby="topics-label">
+        <div class="container">
+          <div class="card topic-card">
+            <div class="card-content">
+              <h2 class="section-title headline-2 headline">Hot topics</h2>
+              <div class="section-text">Don't miss out on the latest news about Travel tips, Hotels review, Food guide...</div>
+              <div class="btn-group">
+                <button class="icon-btn" data-slider-prev aria-label="previous">
+                  <span class="material-symbols-outlined">arrow_left_alt</span>
+                </button>
+                <button class="icon-btn" data-slider-next aria-label="next">
+                  <span class="material-symbols-outlined">arrow_right_alt</span>
+                </button>
+              </div>
+            </div>
+            <div class="slider" data-slider>
+              <ul class="slider-list" data-slider-container>
+                <li class="slider-item" style="background-image: url(assets/images/topic-1.png);">
+                  <a href="#" class="overlay-content">
+                    <h3 class="overlay-title">Sport</h3>
+                    <span class="overlay-subtitle">38 Articles</span>
+                  </a>
+                </li>
+                <li class="slider-item" style="background-image: url(assets/images/topic-2.png);">
+                  <a href="#" class="overlay-content">
+                    <h3 class="overlay-title">Travel</h3>
+                    <span class="overlay-subtitle">63 Articles</span>
+                  </a>
+                </li>
+                <li class="slider-item" style="background-image: url(assets/images/topic-3.png);">
+                  <a href="#" class="overlay-content">
+                    <h3 class="overlay-title">Design</h3>
+                    <span class="overlay-subtitle">78 Articles</span>
+                  </a>
+                </li>
+                <li class="slider-item" style="background-image: url(assets/images/topic-4.png);">
+                  <a href="#" class="overlay-content">
+                    <h3 class="overlay-title">Movie</h3>
+                    <span class="overlay-subtitle">125 Articles</span>
+                  </a>
+                </li>
+                <li class="slider-item" style="background-image: url(assets/images/topic-5.png);">
+                  <a href="#" class="overlay-content">
+                    <h3 class="overlay-title"Lifestyle</h3>
+                    <span class="overlay-subtitle">78 Articles</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
