@@ -150,7 +150,7 @@ body {
   #COMPONENT
 \*-----------------------------------*/
 .hover-1,
-.hover-2 { transition: var(--transition-2); }
+.hover-2 { transition: var(--transition-1); }
 .hover-1:is(:hover, :focus-visible) {
   color: var(--text-wild-blue-yonder);
   translate: 3px 0;
@@ -208,6 +208,19 @@ body {
   background-color: var(--bg-oxford-blue);
   border: 1px solid var(--border-prussian-blue);
 }
+.meta-data,
+.tags,
+.reading-time {
+  display: flex;
+  align-items: center;
+  font-size: var(--fontSize-8);
+}
+.meta-data {
+  justify-content: space-between;
+}
+.tags,
+.reading-time { gap: 5px; }
+.reading-time .material-symbols-outlined { font-size: var(--fontSize-8); }
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -405,31 +418,92 @@ body {
 }
 .overlay-content:is(:hover, :focus-visible) .overlay-title { color: var(--text-carolina-blue); }
 .overlay-subtitle { font-size: var(--fontSize-6); }
-
-
-
-
 /*-----------------------------------*\
   #FEATURED
 \*-----------------------------------*/
-
-
-
-
-
+.features-bg { display: none; }
+.section-text {
+  margin-block-start: 10px;
+}
+.features .features-list {
+  display: grid;
+  gap: 30px;
+}
+.features .features-list .card {
+  border-radius: var(--radius-16);
+  padding: 20px;
+  transition: var(--transition-1);
+}
+.features .features-list .card:where(:hover, :focus-visible) { translate: 0 -5px;}
+.features .features-list .card-banner { margin-block-end : 24px; }
+.features .features-list .img-holder { border-radius: var(--radius-16); }
+.features .features-list .features-card-title {
+  line-height: var(--lineHeight-2);
+  margin-block: 15px;
+}
+.features .features-list .writer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.features .features-list .profile-card:is(.card-title, .card-subtitle) { color: var(--text-slate-gray); }
+.features .features-list .profile-card .card-title { font-weight: var(--weight-bold); }
+.features .features-list .card-btn,
+.features .features-list .profile-card .card-subtitle { font-size: var(--fontSize-8); }
+.features .features-list .card-btn {
+  position: relative;
+  z-index: 1;
+  color: var(--text-wild-blue-yonder);
+}
+.features .features-list .card-btn::before {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: -20px;
+  top: -13px;
+  background-color: var(--bg-oxford-blue-2);
+  border-radius: var(--radius-circle);
+  z-index: -1;
+}
+.features .btn { margin: 30px auto 0; }
 /*-----------------------------------*\
   #POPULAR TAGS
 \*-----------------------------------*/
-
-
-
-
-
+.popular-tags .popular-tags-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  gap: 30px; 
+}
+.tag-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px;
+  border-radius: var(--radius-16);
+  transition: var(--transition-1);
+}
+.tag-btn:where(:hover, :focus-visible) {
+  box-shadow: var(--shadow-2);
+  background-image: linear-gradient(var(--bg-oxford-blue) var(--bg-oxford-blue-2)), var(--gradient-1);
+  background-clip: padding-box, border-box;
+  border-color: transparent;
+  translate: 0 -2px;
+}
+.tag-btn img {
+  width: 100%;
+  max-width: 32px;
+}
 /*-----------------------------------*\
   #RECENT POST
 \*-----------------------------------*/
-
-
+.recent-posts-list {
+  display: grid;
+  gap: 30px;
+}
+.recent-posts-list .card-banner { margin-block-end: 24px; }
+.recent-posts-list .img-holder { border-radius: var(--radius-16); }
 
 
 

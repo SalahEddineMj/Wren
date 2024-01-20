@@ -32,6 +32,12 @@
     - custom js link
   -->
   <script src="assets/js/script.js" defer></script>
+  <!--
+    - preload images
+  -->
+  <link rel="preload" as="image" href="assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="assets/images/pattern-2.svg">
+  <link rel="preload" as="image" href="assets/images/pattern-3.svg">
 </head>
 <body>
   <!--
@@ -53,19 +59,19 @@
         </div>
         <ul class="navbar-list">
           <li>
-            <a href="#home" class="navbar-link">Home</a>
+            <a href="#home" class="navbar-link hover-1" data-nav-toggler>Home</a>
           </li>
           <li>
-            <a href="#topics" class="navbar-link">Topics</a>
+            <a href="#topics" class="navbar-link hover-1" data-nav-toggler>Topics</a>
           </li>
           <li>
-            <a href="#featured" class="navbar-link">Featured post</a>
+            <a href="#featured" class="navbar-link hover-1" data-nav-toggler>Featured post</a>
           </li>
           <li>
-            <a href="#recent" class="navbar-link">Recent Post</a>
+            <a href="#recent" class="navbar-link hover-1" data-nav-toggler>Recent Post</a>
           </li>
           <li>
-            <a href="#contact" class="navbar-link">Contact</a>
+            <a href="#contact" class="navbar-link hover-1" data-nav-toggler>Contact</a>
           </li>
         </ul>
         <div class="navbar-middle">
@@ -78,22 +84,22 @@
           </div>
           <ul class="links-list">
             <li>
-              <a href="#" class="list-link">Profile</a>
+              <a href="#" class="list-link hover-1">Profile</a>
             </li>
             <li>
-              <a href="#" class="list-link">Articles Saved</a>
+              <a href="#" class="list-link hover-1">Articles Saved</a>
             </li>
             <li>
-              <a href="#" class="list-link">Add New Post</a>
+              <a href="#" class="list-link hover-1">Add New Post</a>
             </li>
             <li>
-              <a href="#" class="list-link">My Likes</a>
+              <a href="#" class="list-link hover-1">My Likes</a>
             </li>
             <li>
-              <a href="#" class="list-link">Account Setting</a>
+              <a href="#" class="list-link hover-1">Account Setting</a>
             </li>
             <li>
-              <a href="#" class="list-link">Sign Out</a>
+              <a href="#" class="list-link hover-1">Sign Out</a>
             </li>
           </ul>
         </div>
@@ -111,37 +117,37 @@
     </div>
   </header>
   <main>
-    <!--
-      - #HERO
-    -->
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <p class="hero-subtitle">Hello Everyone!</p>
-          <h1 class="hero-title headline headline-1">I’m <span class="span">Wren Clark</span></h1>
-          <p class="hero-text">I use animation as a third dimension by which to simplify experiences and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.</p>
-          <div class="input-wrapper">
-            <input type="email" name="email-field" placeholder="Type your email address" class="input-field">
-            <button class="btn btn-primary">
-              <span>subscribe</span>
-              <span class="material-symbols-outlined">arrow_right_alt</span>
-            </button>
-          </div>
-        </div>
-        <div class="hero-banner">
-            <img src="assets/images/hero-banner.png" alt="Wren Clark" width="327" height="490" class="img-cover">
-            <img src="assets/images/pattern-2.svg" class="shape shape-1" alt="shape">
-            <img src="assets/images/pattern-3.svg" class="shape shape-2" alt="shape">
-        </div>
-        <img src="assets/images/shadow-1.svg" class="bg-hero bg-hero-1">
-        <img src="assets/images/shadow-2.svg" class="bg-hero bg-hero-2">
-      </div>
-    </section>
     <article>
+      <!--
+        - #HERO
+      -->
+      <section class="hero" id="home" aria-labelledby="home-label">
+        <div class="container">
+          <div class="hero-content">
+            <p class="hero-subtitle">Hello Everyone!</p>
+            <h1 class="hero-title headline headline-1">I’m <span class="span">Wren Clark</span></h1>
+            <p class="hero-text">I use animation as a third dimension by which to simplify experiences and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.</p>
+            <div class="input-wrapper">
+              <input type="email" name="email-field" placeholder="Type your email address" class="input-field">
+              <button class="btn btn-primary">
+                <span>subscribe</span>
+                <span class="material-symbols-outlined">arrow_right_alt</span>
+              </button>
+            </div>
+          </div>
+          <div class="hero-banner">
+              <img src="assets/images/hero-banner.png" alt="Wren Clark" width="327" height="490" class="img-cover">
+              <img src="assets/images/pattern-2.svg" class="shape shape-1" alt="shape">
+              <img src="assets/images/pattern-3.svg" class="shape shape-2" alt="shape">
+          </div>
+          <img src="assets/images/shadow-1.svg" class="bg-hero bg-hero-1">
+          <img src="assets/images/shadow-2.svg" class="bg-hero bg-hero-2">
+        </div>
+      </section>
       <!--
         - #TOPICS
       -->
-      <section class="topics" id="topics" aria-labelledby="topics-label">
+      <section class="topics section" id="topics" aria-labelledby="topics-label">
         <div class="container">
           <div class="card topic-card">
             <div class="card-content">
@@ -184,13 +190,343 @@
                 </li>
                 <li class="slider-item" style="background-image: url(assets/images/topic-5.png);">
                   <a href="#" class="overlay-content">
-                    <h3 class="overlay-title"Lifestyle</h3>
+                    <h3 class="overlay-title">Lifestyle</h3>
                     <span class="overlay-subtitle">78 Articles</span>
                   </a>
                 </li>
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+      <!--
+        - #FEATURES
+      -->
+      <section class="features section" aria-labelledby="feature-label" id="featured">
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="section-title headline headline-2"><span class="span">Editor's picked</span></h2>
+            <p class="section-text">Featured and highly rated articles</p>
+          </div>
+          <ul class="features-list">
+            <li class="card">
+              <div class="card-banner">
+                <figure class="img-holder">
+                  <img src="assets/images/featured-1.png" alt="Self-observation is the first step of inner unfolding" class="img-cover" loading="lazy">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="meta-data">
+                  <div class="tags">
+                    <a href="#" class="hover-2">#Travel</a>
+                    <a href="#" class="hover-2">#Lifestyle</a>
+                  </div>
+                  <span class="reading-time">
+                    <span class="material-symbols-outlined">schedule</span>
+                    <span class="span">3 min read</span>
+                  </span>
+                </div>
+                <h3>
+                  <a href="#" class="features-card-title headline headline-3 hover-2">Self-observation is the first step of inner unfolding</a>
+                </h3>
+                <div class="writer">
+                  <div class="profile-card">
+                    <img src="assets/images/author-1.png" class="profile-banner" alt="Joseph" width="48" height="48">
+                    <div>
+                      <p class="card-title">Joseph</p>
+                      <p class="card-subtitle">25 Nov 2022</p>
+                    </div>
+                  </div>
+                  <a href="#" class="card-btn">Read more</a>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-banner">
+                <figure class="img-holder">
+                  <img src="assets/images/featured-2.png" alt="Self-observation is the first step of inner unfolding" class="img-cover" loading="lazy">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="meta-data">
+                  <div class="tags">
+                    <a href="#" class="hover-2">#Design</a>
+                    <a href="#" class="hover-2">#Movie</a>
+                  </div>
+                  <span class="reading-time">
+                    <span class="material-symbols-outlined">schedule</span>
+                    <span class="span">6 min read</span>
+                  </span>
+                </div>
+                <h3>
+                  <a href="#" class="features-card-title headline headline-3 hover-2">Self-observation is the first step of inner unfolding</a>
+                </h3>
+                <div class="writer">
+                  <div class="profile-card">
+                    <img src="assets/images/author-2.png" class="profile-banner" alt="Joseph" width="48" height="48">
+                    <div>
+                      <p class="card-title">Joseph</p>
+                      <p class="card-subtitle">25 Nov 2022</p>
+                    </div>
+                  </div>
+                  <a href="#" class="card-btn">Read more</a>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-banner">
+                <figure class="img-holder">
+                  <img src="assets/images/featured-3.png" alt="Self-observation is the first step of inner unfolding" class="img-cover" loading="lazy">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="meta-data">
+                  <div class="tags">
+                    <a href="#" class="hover-2">#Travel</a>
+                    <a href="#" class="hover-2">#Lifestyle</a>
+                  </div>
+                  <span class="reading-time">
+                    <span class="material-symbols-outlined">schedule</span>
+                    <span class="span">3 min read</span>
+                  </span>
+                </div>
+                <h3>
+                  <a href="#" class="features-card-title headline headline-3 hover-2">Self-observation is the first step of inner unfolding</a>
+                </h3>
+                <div class="writer">
+                  <div class="profile-card">
+                    <img src="assets/images/author-3.png" class="profile-banner" alt="Joseph" width="48" height="48">
+                    <div>
+                      <p class="card-title">Joseph</p>
+                      <p class="card-subtitle">25 Nov 2022</p>
+                    </div>
+                  </div>
+                  <a href="#" class="card-btn">Read more</a>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-banner">
+                <figure class="img-holder">
+                  <img src="assets/images/featured-4.png" alt="Self-observation is the first step of inner unfolding" class="img-cover" loading="lazy">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="meta-data">
+                  <div class="tags">
+                    <a href="#" class="hover-2">#Travel</a>
+                    <a href="#" class="hover-2">#Lifestyle</a>
+                  </div>
+                  <span class="reading-time">
+                    <span class="material-symbols-outlined">schedule</span>
+                    <span class="span">3 min read</span>
+                  </span>
+                </div>
+                <h3>
+                  <a href="#" class="features-card-title headline headline-3 hover-2">Self-observation is the first step of inner unfolding</a>
+                </h3>
+                <div class="writer">
+                  <div class="profile-card">
+                    <img src="assets/images/author-4.png" class="profile-banner" alt="Joseph" width="48" height="48">
+                    <div>
+                      <p class="card-title">Joseph</p>
+                      <p class="card-subtitle">25 Nov 2022</p>
+                    </div>
+                  </div>
+                  <a href="#" class="card-btn">Read more</a>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-banner">
+                <figure class="img-holder">
+                  <img src="assets/images/featured-5.png" alt="Self-observation is the first step of inner unfolding" class="img-cover" loading="lazy">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="meta-data">
+                  <div class="tags">
+                    <a href="#" class="hover-2">#Travel</a>
+                    <a href="#" class="hover-2">#Lifestyle</a>
+                  </div>
+                  <span class="reading-time">
+                    <span class="material-symbols-outlined">schedule</span>
+                    <span class="span">3 min read</span>
+                  </span>
+                </div>
+                <h3>
+                  <a href="#" class="features-card-title headline headline-3 hover-2">Self-observation is the first step of inner unfolding</a>
+                </h3>
+                <div class="writer">
+                  <div class="profile-card">
+                    <img src="assets/images/author-5.png" class="profile-banner" alt="Joseph" width="48" height="48">
+                    <div>
+                      <p class="card-title">Joseph</p>
+                      <p class="card-subtitle">25 Nov 2022</p>
+                    </div>
+                  </div>
+                  <a href="#" class="card-btn">Read more</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <a href="#" class="btn btn-secondary">
+            <span>Show More Posts</span>
+            <span class="material-symbols-outlined">arrow_right_alt</span>
+          </a>
+          <img src="assets/images/shadow-3.svg" width="500" height="1500" loading="lazy" class="features-bg">
+        </div>
+      </section>
+      <!--
+        - #POPULAR TAGS
+      -->
+      <section class="popular-tags section" aria-labelledby="popular-tags-label">
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="section-title headline headline-2"><span class="span">Popular Tags</span></h2>
+            <p class="section-text">Most searched keywords</p>
+          </div>
+          <ul class="popular-tags-list">
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag1.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Travel">
+                <p>Travel</p>
+              </button>
+            </li>
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag2.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Culture">
+                <p>Culture</p>
+              </button>
+            </li>
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag3.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Lifestyle">
+                <p>Lifestyle</p>
+              </button>
+            </li>
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag4.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Fashion">
+                <p>Fashion</p>
+              </button>
+            </li>
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag5.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Food">
+                <p>Food</p>
+              </button>
+            </li>
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag6.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Space">
+                <p>Space</p>
+              </button>
+            </li>
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag7.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Animal">
+                <p>Animal</p>
+              </button>
+            </li>
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag8.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Minimal">
+                <p>Minimal</p>
+              </button>
+            </li>
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag9.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Interior">
+                <p>Interior</p>
+              </button>
+            </li>
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag10.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Plant">
+                <p>Plant</p>
+              </button>
+            </li>
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag11.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Nature">
+                <p>Nature</p>
+              </button>
+            </li>
+            <li>
+              <button class="card tag-btn">
+                <img src="assets/images/tag12.png" class="profile-banner" width="32" height="32" loading="lazy" alt="Business">
+                <p>Business</p>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!--
+        - #RECENT POSTS
+      -->
+      <section class="recent-posts section" aria-labelledby="recent-posts" id="recent">
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="section-title headline headline-2">
+              <span class="span">Recent posts</span>
+            </h2>
+            <p class="section-text">Don't miss the latest trends</p>
+          </div>
+          <ul class="recent-posts-list">
+            <li>
+              <div class="card-banner">
+                <figure class="img-holder" style="--width: 271; --height: 258;">
+                  <img src="assets/images/recent-post-1.jpg" alt="Helpful Tips for Working from Home as a Freelancer" class="img-cover" width="271" height="258" loading="lazy">
+                </figure>
+              </div>
+              <div class="card-content">
+                <a href="#" class="btn btn-primary">Working Tips</a>
+                <h3 class="headline headline-3">
+                  <a href="#" class="card-title hover-2">Helpful Tips for Working from Home as a Freelancer</a>
+                </h3>
+                <p class="card-text">
+                  Gosh jaguar ostrich quail one excited dear hello and bound and the and bland moral misheard roadrunner flapped lynx far that and jeepers giggled far and far
+                </p>
+                <div class="meta-data">
+                  <div class="tags">
+                    <a href="#" class="hover-2">#Travel</a>
+                    <a href="#" class="hover-2">#Lifestyle</a>
+                  </div>
+                  <span class="reading-time">
+                    <span class="material-symbols-outlined">schedule</span>
+                    <span class="span">3 min read</span>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card-banner">
+                <figure class="img-holder" style="--width: 271; --height: 258;">
+                  <img src="assets/images/recent-post-2.jpg" alt="Helpful Tips for Working from Home as a Freelancer" class="img-cover" width="271" height="258" loading="lazy">
+                </figure>
+              </div>
+              <div class="card-content">
+                <a href="#" class="btn btn-primary">Working Tips</a>
+                <h3 class="headline headline-3">
+                  <a href="#" class="card-title hover-2">Helpful Tips for Working from Home as a Freelancer</a>
+                </h3>
+                <p class="card-text">
+                  Gosh jaguar ostrich quail one excited dear hello and bound and the and bland moral misheard roadrunner flapped lynx far that and jeepers giggled far and far
+                </p>
+                <div class="meta-data">
+                  <div class="tags">
+                    <a href="#" class="hover-2">#Travel</a>
+                    <a href="#" class="hover-2">#Lifestyle</a>
+                  </div>
+                  <span class="reading-time">
+                    <span class="material-symbols-outlined">schedule</span>
+                    <span class="span">3 min read</span>
+                  </span>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </article>

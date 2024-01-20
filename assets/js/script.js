@@ -41,11 +41,18 @@ sliderNextBtn.addEventListener("click", slideNext);
 
 const slidePrev = function () {
   if(currentSliderPos <= 0) {
-    currentSliderPos = totalSliderVisibleItems
+    currentSliderPos = totalSlidableItems
   } else {
     currentSliderPos--
   }
   moveSliderItem()
 }
-sliderPrevBtn.addEventListener("click", slidePrev);
-console.log(sliderContainer.children[currentSliderPos].offsetLeft)
+sliderPrevBtn.addEventListener("click", slidePrev)
+
+
+
+window.addEventListener("resize", function() {
+  totalSliderVisibleItems = Number(getComputedStyle(slider).getPropertyValue("--slider-items"))
+  totalSlidableItems = sliderContainer.childElementCount - totalSliderVisibleItems
+  moveSliderItem()
+})
