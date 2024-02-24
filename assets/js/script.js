@@ -1,13 +1,22 @@
 'use strict'
-const closeBtn = document.querySelector(".close");
-const openBtn = document.querySelector(".open");
 const header = document.querySelector("[data-header]");
+const backToTopBtn = document.querySelector("[data-back-to-top-btn]");
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]")
-window.addEventListener("scroll", _ => header.classList[window.scrollY > 80 ? "add" : "remove"]("active"))
+window.addEventListener("scroll", _ => {
+  if (window.scrollY > 100) {
+    header.classList.add("active");
+    backToTopBtn.classList.add("active")
+  }
+  else {
+    header.classList.remove("active");
+    backToTopBtn.classList.remove("active")
+  }
+})
 navTogglers.forEach(navToggler => {
   navToggler.addEventListener("click", _ => {
-    navbar.classList.toggle("active")
+    navbar.classList.toggle("active");
+    document.body.classList.toggle("nav-active")
   })
 })
 
@@ -22,8 +31,7 @@ let currentSliderPos = 0
 
 
 const moveSliderItem = function() {
-  sliderContainer.style.transform = `translateX(-${sliderContainer.children[currentSliderPos].
-  offsetLeft}px)`;
+  sliderContainer.style.transform = `translateX(-${sliderContainer.children[currentSliderPos].offsetLeft}px)`;
 }
 
 
